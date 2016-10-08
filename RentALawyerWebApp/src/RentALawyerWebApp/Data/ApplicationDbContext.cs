@@ -22,5 +22,13 @@ namespace RentALawyerWebApp.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<Country> Country { get; set; }
+
+        public DbSet<Language> Language { get; set; }
+
+        public DbSet<Category> Category { get; set; }
+
+        public DbSet<Lawyer> Lawyer { get; set; }
     }
 }

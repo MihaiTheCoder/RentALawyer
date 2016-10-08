@@ -9,5 +9,10 @@ namespace RentALawyerWebApp.Models
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : IdentityUser
     {
+        public bool IsLawyer { get; set; }
+
+        public int? LawyerId { get; set; }
+
+        public int? ClientId { get; set; }
     }
 }

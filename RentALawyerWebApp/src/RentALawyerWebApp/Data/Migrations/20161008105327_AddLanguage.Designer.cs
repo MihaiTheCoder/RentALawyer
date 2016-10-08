@@ -8,9 +8,10 @@ using RentALawyerWebApp.Data;
 namespace RentALawyerWebApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20161008105327_AddLanguage")]
+    partial class AddLanguage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -178,38 +179,6 @@ namespace RentALawyerWebApp.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("RentALawyerWebApp.Models.Category", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Code");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Category");
-                });
-
-            modelBuilder.Entity("RentALawyerWebApp.Models.CategoryLawyer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("CategoryId");
-
-                    b.Property<int>("LawyerId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("LawyerId");
-
-                    b.ToTable("CategoryLawyer");
-                });
-
             modelBuilder.Entity("RentALawyerWebApp.Models.Country", b =>
                 {
                     b.Property<int>("ID")
@@ -224,24 +193,6 @@ namespace RentALawyerWebApp.Data.Migrations
                     b.ToTable("Country");
                 });
 
-            modelBuilder.Entity("RentALawyerWebApp.Models.CountryLawyer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("CountryId");
-
-                    b.Property<int>("LawyerId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CountryId");
-
-                    b.HasIndex("LawyerId");
-
-                    b.ToTable("CountryLawyer");
-                });
-
             modelBuilder.Entity("RentALawyerWebApp.Models.Language", b =>
                 {
                     b.Property<int>("ID")
@@ -254,38 +205,6 @@ namespace RentALawyerWebApp.Data.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Language");
-                });
-
-            modelBuilder.Entity("RentALawyerWebApp.Models.LanguageLawyer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("LanguageId");
-
-                    b.Property<int>("LawyerId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("LanguageId");
-
-                    b.HasIndex("LawyerId");
-
-                    b.ToTable("LanguageLawyer");
-                });
-
-            modelBuilder.Entity("RentALawyerWebApp.Models.Lawyer", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Lawyer");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
@@ -322,45 +241,6 @@ namespace RentALawyerWebApp.Data.Migrations
                     b.HasOne("RentALawyerWebApp.Models.ApplicationUser")
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("RentALawyerWebApp.Models.CategoryLawyer", b =>
-                {
-                    b.HasOne("RentALawyerWebApp.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("RentALawyerWebApp.Models.Lawyer", "Lawyer")
-                        .WithMany("Categories")
-                        .HasForeignKey("LawyerId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("RentALawyerWebApp.Models.CountryLawyer", b =>
-                {
-                    b.HasOne("RentALawyerWebApp.Models.Country", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("RentALawyerWebApp.Models.Lawyer", "Lawyer")
-                        .WithMany("Countries")
-                        .HasForeignKey("LawyerId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("RentALawyerWebApp.Models.LanguageLawyer", b =>
-                {
-                    b.HasOne("RentALawyerWebApp.Models.Language", "Language")
-                        .WithMany()
-                        .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("RentALawyerWebApp.Models.Lawyer", "Lawyer")
-                        .WithMany("Languages")
-                        .HasForeignKey("LawyerId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }
