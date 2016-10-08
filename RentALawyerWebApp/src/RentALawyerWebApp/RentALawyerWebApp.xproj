@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>1422e245-3047-401a-a3bb-23f5a4765b5d</ProjectGuid>
+    <ProjectGuid>eb2ca4bb-7056-4a97-b1a3-487c0087ee39</ProjectGuid>
     <RootNamespace>RentALawyerWebApp</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
@@ -14,6 +14,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
+    <ApplicationInsightsResourceId>/subscriptions/089980e1-a22c-487d-9d48-837a32e60270/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/RentALawyerWebApp</ApplicationInsightsResourceId>
   </PropertyGroup>
   <ItemGroup>
     <DnxInvisibleContent Include="bower.json" />

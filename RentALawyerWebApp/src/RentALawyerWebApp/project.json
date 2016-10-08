@@ -1,9 +1,9 @@
 ﻿{
-  "userSecretsId": "aspnet-RentALawyerWebApp-39503502-4db7-49a8-a207-ebb9edb91c60",
+  "userSecretsId": "aspnet-RentALawyerWebApp-4db56c03-a567-4843-8866-0cb7bdfbd49a",
 
   "dependencies": {
     "Microsoft.NETCore.App": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "platform"
     },
     "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
@@ -11,17 +11,18 @@
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
-    "Microsoft.AspNetCore.Mvc": "1.0.0",
+    "Microsoft.AspNetCore.Mvc": "1.0.1",
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
+    "Microsoft.AspNetCore.Routing": "1.0.1",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
     "Microsoft.AspNetCore.StaticFiles": "1.0.0",
-    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.1",
     "Microsoft.EntityFrameworkCore.SqlServer.Design": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "build"
     },
     "Microsoft.EntityFrameworkCore.Tools": {
@@ -83,8 +84,7 @@
   "publishOptions": {
     "include": [
       "wwwroot",
-      "Views",
-      "Areas/**/Views",
+      "**/*.cshtml",
       "appsettings.json",
       "web.config"
     ]
